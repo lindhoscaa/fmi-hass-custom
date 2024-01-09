@@ -6,9 +6,9 @@ import logging
 _LOGGER = logging.getLogger(__package__)
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
-DOMAIN = "fmi"
-NAME = "FMI"
-MANUFACTURER = "Finnish Meteorological Institute"
+DOMAIN = "oscar"
+NAME = "OscarFMI"
+MANUFACTURER = "Linfh Technologies"
 TIMEOUT_FMI_INTEG_IN_SEC = 40
 TIMEOUT_LIGHTNING_PULL_IN_SECS = 5
 TIMEOUT_MAREO_PULL_IN_SECS = 5
@@ -28,6 +28,7 @@ CONF_MIN_PRECIPITATION = "min_precipitation"
 CONF_MAX_PRECIPITATION = "max_precipitation"
 CONF_DAILY_MODE = "daily_mode"
 CONF_LIGHTNING = "lightning_sensor"
+CONF_FMISID = "fmisid"
 
 HUMIDITY_RANGE = list(range(1, 101))
 TEMP_RANGE = list(range(-40, 50))
@@ -63,7 +64,7 @@ LIGHTNING_LIMIT = 5
 
 BASE_URL = "https://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::observations::lightning::multipointcoverage&timestep=3600&"
 # Constants for Mareograph data
-BASE_MAREO_FORC_URL = "http://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::oaas::sealevel::point::simple&timestep=30&"
+BASE_MAREO_FORC_URL = "http://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::sealevel::point::simple&timestep=30&"
 
 #BASE_MAREO_OBS_URL = "https://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::observations::mareograph::simple&fmisid=132310&timestep=30"
 # example: http://opendata.fmi.fi/wfs?service=WFS&version=2.0.0&request=getFeature&storedquery_id=fmi::forecast::oaas::sealevel::point::simple&timestep=30&latlon=60.0,24.4&starttime=2021-04-11T13:24:00Z
